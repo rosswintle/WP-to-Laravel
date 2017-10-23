@@ -1,0 +1,45 @@
+/* 
+ * Colours
+ * WordPress: #0073aa;
+ * Laravel: #f4645f / #FB503B;
+ *
+ */
+
+body {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0073aa+0,2989d8+40,fb503b+60,fb503b+100 */
+	background: #0073aa; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+/*	background: -webkit-linear-gradient(left, #0073aa 0%, #0073aa 40%, #fb503b 60%, #fb503b 100%);
+	background: -o-linear-gradient(left, #0073aa 0%, #0073aa 40%, #fb503b 60%, #fb503b 100%);
+	background: linear-gradient(to right, #0073aa 0%, #0073aa 40%, #fb503b 60%, #fb503b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+*/	background: -webkit-linear-gradient(left, #0073aa 0%, #0073aa 40%, #fb503b 60%, #fb503b 100%);
+	background: -o-linear-gradient(left, #0073aa 0%, #0073aa 40%, #fb503b 60%, #fb503b 100%);
+	background: linear-gradient(to right, #0073aa 0%, #0073aa 10%, #fb503b 90%, #fb503b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	min-height: 100vh;
+
+	margin: 0;
+	font-family: "Source Sans Pro",sans-serif;
+	color: #FFF;
+}
+header, article, footer {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+header {
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+}
+h1 {
+	font-weight: 200;
+	font-size: 52px;
+	text-align: center;
+}
+h2 {
+	font-weight: 200;
+	text-align: center;
+}
+article {
+	width: 60%;
+	font-size: 1.2rem;
+	line-height: 1.6rem;
+}
