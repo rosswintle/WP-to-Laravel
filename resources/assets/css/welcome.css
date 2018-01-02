@@ -29,6 +29,28 @@ header {
 	margin-top: 10vh;
 	margin-bottom: 10vh;
 }
+.welcome-buttons {
+	margin-top: 8vh;
+	text-align: center;
+}
+.welcome-buttons .button {
+	display: inline-block;
+	font-size: 1.3rem;
+	border: 1px solid #FFF;
+	padding: 0.6rem 1.2rem;
+	font-weight: 200;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: all 0.3s;
+	text-transform: uppercase;
+}
+.welcome-buttons .button:hover, .welcome-buttons .button:active, .welcome-buttons .button:focus {
+	text-decoration: none;
+	/* background-color: #FFF; */
+	/* color: #FB503B; */
+	background-color: #FB503B;
+	border-color: #FB503B;
+}
 h1 {
 	font-weight: 200;
 	font-size: 52px;

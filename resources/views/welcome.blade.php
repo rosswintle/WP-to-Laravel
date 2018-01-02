@@ -61,7 +61,21 @@
 	<header>
 	
 		<h1>WP to Laravel</h1>
-		<h2>Stop fighting WordPress; start building efficient, effective apps in Laravel</h2>
+        <h2>Stop fighting WordPress; start building efficient, effective apps in Laravel</h2>
+        
+        <div class="welcome-buttons">
+            @auth
+                <a class="button" href="{{ route('home') }}">
+                    Watch the videos
+                </a>
+            @endauth
+
+            @guest
+                <a class="button" href="{{ route('register') }}">
+                    Sign up
+                </a> 
+            @endguest
+        </div>
 	
 	</header>
 	
@@ -72,44 +86,6 @@
 			I've had conversations with lots of people about the struggles of using WordPress for things other than publishing, content management, and eCommerce.</p>
 		<p>These days, conversation often turns to the Laravel framework, which I now often use for those things that WordPress isn’t a good fit for.</p>
 		<p>I often promise to give people an overview of Laravel if they want one. And to fulfil that promise I’m recording a free set of video tutorials that explain Laravel to WordPress developers.
-		</p>
-		<h3>Register your interest</h3>
-		<p>The videos are being made now. Sign up to be notified when they are ready. I will only use your email address to tell you about this project. You can, of course, unsubscribe at any time.</p>
-		<p>
-			<!-- Begin MailChimp Signup Form -->
-			<link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
-			<style type="text/css">
-				#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-				/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-	   			We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-			</style>
-			<div id="mc_embed_signup">
-				<form action="https://oikos.us2.list-manage.com/subscribe/post?u=7462bac76ad971844878c8c71&amp;id=53eedc0072" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    				<div id="mc_embed_signup_scroll">
-						<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-						<div class="mc-field-group">
-							<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
-							</label>
-							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-						</div>
-						<div class="mc-field-group">
-							<label for="mce-FNAME">First Name </label>
-							<input type="text" value="" name="FNAME" class="" id="mce-FNAME">
-						</div>
-						<div class="mc-field-group">
-							<label for="mce-LNAME">Last Name </label>
-							<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
-						</div>
-						<div id="mce-responses" class="clear">
-							<div class="response" id="mce-error-response" style="display:none"></div>
-							<div class="response" id="mce-success-response" style="display:none"></div>
-						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7462bac76ad971844878c8c71_53eedc0072" tabindex="-1" value=""></div>
-						<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-					</div>
-				</form>
-			</div>
-			<!--End mc_embed_signup-->
 		</p>
 
 		<h3>
@@ -122,7 +98,7 @@
 		</p>
 
 		<h3>
-			What will the videos be about?
+			What are the videos about?
 		</h3>
 		<p>
 			The aim is not to teach you Laravel, but to show you around the main parts of it and to try and explain how the core concepts of WordPress map into Laravel concepts.
@@ -131,24 +107,26 @@
 			My hope is that you will end up wanting to find out more from the Laravel documentation; from other, better video courses; or from a good book.
 		</p>
 		<p>
-			I am still recording, but the videos are 10 to 30 minutes long and there will be, I think, 10 of them.  The working titles are:
+			The videos are each between 10 and 30 minutes long and there are 10 of them, plus some bonus content.  The contents are:
 		</p>
 		<p>
 			<ol>
-				<li><strong>Introduction</strong>: Why Laravel?</li>
+				<li><strong>Introducing Laravel</strong>: Why Laravel?</li>
 				<li><strong>Laravel Concepts</strong></li>
-				<li><strong>The Not-So-Famous 5-minute install</strong>: download, install and configure your app</li>
-				<li><strong>Where am I and what are all these files?</strong>: an overview of the Laravel file and directory structure</li>
+				<li><strong>Laravel's Not-So-Famous 5-minute install</strong>: download, install and configure your app</li>
+				<li><strong>Where am I and where are all my files?</strong>: an overview of the Laravel file and directory structure</li>
 				<li><strong>To do anything, you need a route</strong>: the basics of routing</li>
 				<li><strong>Beautiful views</strong>: an quick tour of Laravel’s “Blade” templating system</li>
-				<li><strong>Taking control</strong>: an overview of the purpose and structure of controllers</li>
 				<li><strong>Data? What data?</strong>: How to define a data structure in Laravel</li>
 				<li><strong>I’m a model, you know what I mean?</strong>: A description of the abstract data modelling features of Laravel</li>
-				<li><strong>Putting it all together</strong>: Watch me live-code a very basic app from scratch!</li>
+				<li><strong>Taking control</strong>: an overview of the purpose and structure of controllers</li>
+                <li><strong>Putting it all together</strong>: Watch me live-code a very basic app from scratch!</li>
+                <li><strong>Bonus: Addendum and resources:</strong>: Some things I missed that are worth knowing, and where to go to learn more</li>
+                <li><strong>Bonus: Behind the scenes:</strong>: A peek into the tools I used to make the series and that I use to write both Laravel and PHP code</li>
 			</ol>
 		</p>
 
-		<h3>What will the videos be like?</h3>
+		<h3>What are the videos like?</h3>
 		<p>
 			Let’s be honest: I’d love to be Jeffrey Way or Wes Bos, but I’m not. So I’ve done my best to make these videos as good as possible, but I’m new to this kind of thing and they won’t be the quality of other screencast tutorials.  That’s partly why they are free.  This is partly an exercise for me in how to do online training.
 		</p>
@@ -167,6 +145,21 @@
 			they are trying to make it do things that it really shouldn't.  It's my opinion that for many of those developers learning
 			Laravel would open up new opportunities. Which is why I want to show them the benefits, and how easy the basics of Laravel can be.
 		<p>
+
+        <div class="welcome-buttons">
+            @auth
+                <a class="button" href="{{ route('home') }}">
+                    Watch the videos
+                </a>
+            @endauth
+
+            @guest
+                <a class="button" href="{{ route('register') }}">
+                    Sign up
+                </a> 
+            @endguest
+        </div>
+
 
 	</article>
 
