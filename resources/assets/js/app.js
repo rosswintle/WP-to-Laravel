@@ -20,3 +20,28 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+document.querySelectorAll('.watched-toggle').forEach(
+    function( elem ) {
+        elem.addEventListener('click', toggleVideo);
+    }
+);
+
+function toggleVideo( e ) {
+
+    e.preventDefault();
+
+    const toggleUrl = this.dataset.toggleUrl;
+    const statusElem = this.parentNode.querySelector('.watched-status');
+
+    axios.post( toggleUrl )
+        .then( function (response) {
+            if ( 1 == response.data.newStatus ) {
+                statusElem.innerHTML = 'Yes';
+            } else {
+               statusElem.innerHTML = 'No';
+            }
+        } )
+        .catch( error => console.log(error) );
+
+}

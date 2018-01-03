@@ -30,8 +30,8 @@ Route::middleware('auth')->prefix('v1')->group( function () {
     Route::prefix('video')->group( function () {
 
         Route::post('watch/{video}', 'VideoApiController@markWatched');
-
         Route::post('unwatch/{video}', 'VideoApiController@markUnwatched');
+        Route::post('togglewatched/{video}', 'VideoApiController@toggleWatched');
 
     });
 

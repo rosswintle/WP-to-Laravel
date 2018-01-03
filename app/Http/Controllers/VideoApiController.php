@@ -110,4 +110,22 @@ class VideoApiController extends Controller
         return $video;
     }
 
+    /**
+     * Toggle watched status
+     *
+     * @param  \App\Video  $video
+     * @return integer
+     */
+    public function toggleWatched(Video $video)
+    {
+        $user = Auth::user();
+        if ( $user->hasWatched( $video ) ) {
+            $user->watched()->detach($video);
+            return [ 'newStatus' => 0 ];
+        } else {
+            $user->watched()->attach($video);
+            return [ 'newStatus' => 1 ];
+        }
+    }
+
 }

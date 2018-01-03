@@ -990,8 +990,30 @@ window.Vue = __webpack_require__(35);
 Vue.component('example', __webpack_require__(38));
 
 var app = new Vue({
-  el: '#app'
+    el: '#app'
 });
+
+document.querySelectorAll('.watched-toggle').forEach(function (elem) {
+    elem.addEventListener('click', toggleVideo);
+});
+
+function toggleVideo(e) {
+
+    e.preventDefault();
+
+    var toggleUrl = this.dataset.toggleUrl;
+    var statusElem = this.parentNode.querySelector('.watched-status');
+
+    axios.post(toggleUrl).then(function (response) {
+        if (1 == response.data.newStatus) {
+            statusElem.innerHTML = 'Yes';
+        } else {
+            statusElem.innerHTML = 'No';
+        }
+    }).catch(function (error) {
+        return console.log(error);
+    });
+}
 
 /***/ }),
 /* 11 */
