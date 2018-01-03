@@ -23,5 +23,6 @@ Route::group( [ 'prefix' => 'video', 'middleware' => [ 'auth' ] ], function () {
 
     Route::get('watched/{video}', 'VideoController@markWatched');
     Route::get('unwatched/{video}', 'VideoController@markUnwatched');
+    Route::get('togglewatched/{video}', 'VideoController@toggleWatched');
 
 } );

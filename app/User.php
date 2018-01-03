@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use \App\Video;
 
 class User extends Authenticatable
 {
@@ -27,7 +28,31 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Define relationship between user and videos
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     function watched() {
         return $this->belongsToMany('App\Video', 'watched_videos');
+    }
+
+    function getWatchedIdsAttribute() {
+        return $this->watched->pluck('id');
+    }
+
+    /**
+     * Check if a user has watched a specified video.
+     *
+     * Parameter can be a video or
+     *
+     * @param \App\Video | int $video
+     * @return Boolean
+     */
+    function hasWatched( $video ) {
+        $videoId = ( is_a( $video, 'App\Video' ) ) ? $video->id : $video;
+
+        $watchedIds = $this->watched_ids;
+        return $watchedIds->contains( $videoId );
     }
 }

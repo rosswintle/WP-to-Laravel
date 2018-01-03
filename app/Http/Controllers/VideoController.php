@@ -110,4 +110,21 @@ class VideoController extends Controller
         $user->watched()->detach($video);
         return redirect('home');
     }
+
+    /**
+     * Toggle watched status
+     *
+     * @param  \App\Video  $video
+     * @return \Illuminate\Http\Response
+     */
+    public function toggleWatched(Video $video)
+    {
+        $user = Auth::user();
+        if ( $user->hasWatched( $video ) ) {
+            $user->watched()->detach($video);
+        } else {
+            $user->watched()->attach($video);
+        }
+        return redirect('home');
+    }
 }

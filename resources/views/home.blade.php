@@ -28,7 +28,12 @@
                                     <td>{{ $video->name }}</td>
                                     <td>{{ $video->description }}</td>
                                     <td>{{ $video->url }}</td>
-                                    <td>{{ $watched->contains($video->id) ? 'Yes' : 'No' }}</td>
+                                    <td>
+                                        {{ $watched->contains($video->id) ? 'Yes' : 'No' }}<br>
+                                        <a class="watched-toggle" href="{{ action( 'VideoController@toggleWatched', ['video' => $video->id] ) }}">
+                                            Toggle
+                                        </a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
