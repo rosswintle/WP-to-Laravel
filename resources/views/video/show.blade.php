@@ -12,12 +12,13 @@
                     class="{{ $watchedVideos->contains( $thisVideo->id ) ? 'watched' : 'unwatched' }} {{ $thisVideo->id == $video->id ? 'current-video' : '' }}">
                     <h3>
                         {{ $thisVideo->name }}
-                        @if ( $watchedVideos->contains( $thisVideo->id ) )
-                            <span class="watched">
-                                (Watched)
-                            </span>
-                        @endif
                     </h3>
+                    <p class="video-meta">
+                        {{ intdiv( $thisVideo->duration, 60 ) }}:{{ sprintf('%02d', $thisVideo->duration % 60) }}
+                        @if ( $watchedVideos->contains( $thisVideo->id ) )
+                            (Watched)
+                        @endif
+                    </p>
                     <p>
                         {{ $thisVideo->description }}
                     </p>
