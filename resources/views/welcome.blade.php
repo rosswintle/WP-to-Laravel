@@ -65,7 +65,7 @@
         
         <div class="welcome-buttons">
             @auth
-                <a class="button" href="{{ route('home') }}">
+                <a class="button" href="{{ action( 'VideoController@show', ['video' => Auth::user()->last_watched_id]) }}">
                     Watch the videos
                 </a>
             @endauth
@@ -148,7 +148,7 @@
 
         <div class="welcome-buttons">
             @auth
-                <a class="button" href="{{ route('home') }}">
+                <a class="button" href="{{ action( 'VideoController@show', ['video' => Auth::user()->last_watched_id]) }}">
                     Watch the videos
                 </a>
             @endauth

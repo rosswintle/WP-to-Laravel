@@ -25,7 +25,11 @@
                                 <tr>
                                     <td>{{ $video->id }}</td>
                                     <td>{{ $video->order }}</td>
-                                    <td>{{ $video->name }}</td>
+                                    <td>
+                                        <a href="{{ action( 'VideoController@show', ['video' => $video->id] ) }}">
+                                            {{ $video->name }}
+                                        </a>
+                                    </td>
                                     <td>{{ $video->description }}</td>
                                     <td>{{ $video->url }}</td>
                                     <td>

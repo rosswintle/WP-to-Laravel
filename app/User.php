@@ -41,6 +41,10 @@ class User extends Authenticatable
         return $this->watched->pluck('id');
     }
 
+    function getLastWatchedIdAttribute() {
+        return $this->watched->sortBy('order')->pluck('id')->last();
+    }
+
     /**
      * Check if a user has watched a specified video.
      *
