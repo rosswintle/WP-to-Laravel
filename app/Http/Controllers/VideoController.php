@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Video;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VideoController extends Controller
 {
@@ -81,5 +82,32 @@ class VideoController extends Controller
     public function destroy(Video $video)
     {
         //
+    }
+
+
+    /**
+     * Mark as watched
+     *
+     * @param  \App\Video  $video
+     * @return \Illuminate\Http\Response
+     */
+    public function markWatched(Video $video)
+    {
+        $user = Auth::user();
+        $user->watched()->attach($video);
+        return redirect('home');
+    }
+
+    /**
+     * Mark as unwatched
+     *
+     * @param  \App\Video  $video
+     * @return \Illuminate\Http\Response
+     */
+    public function markUnwatched(Video $video)
+    {
+        $user = Auth::user();
+        $user->watched()->detach($video);
+        return redirect('home');
     }
 }

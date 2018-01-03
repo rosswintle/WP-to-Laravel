@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group( [ 'prefix' => 'video', 'middleware' => [ 'auth' ] ], function () {
+
+    Route::get('watched/{video}', 'VideoController@markWatched');
+    Route::get('unwatched/{video}', 'VideoController@markUnwatched');
+
+} );
