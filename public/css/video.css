@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,600,400italic);body {
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.navbar {
+  height: 50px;
+}
+
+.navbar .navbar-brand {
+  display: block;
+  position: absolute;
+  left: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.navbar ul {
+  display: block;
+  height: 50px;
+  margin: 0;
+  padding: 0 15px 0 0;
+  list-style: none;
+  text-align: right;
+}
+
+.navbar li {
+  display: inline-block;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  display: inline-block;
+  line-height: 50px;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.video-nav {
+  display: block;
+  width: 30%;
+  margin-right: 5%;
+  float: left;
+}
+
+.video-nav ul {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.video-nav li {
+  display: block;
+  margin: 0;
+  padding: 0.8rem 0.5rem;
+  border-bottom: 1px solid #AAA;
+}
+
+.video-nav a,
+.video-nav a:visited {
+  text-decoration: none;
+  color: #AAA;
+}
+
+.video-nav a.current-video,
+.video-nav a.current-video:visited {
+  color: #636b6f;
+}
+
+.video-nav h3 {
+  text-transform: uppercase;
+}
+
+.video-main {
+  display: block;
+  width: 65%;
+  float: left;
+}
+

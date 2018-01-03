@@ -47,7 +47,14 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        //
+        $videos = Video::all();
+        $watched = Auth::user()->watched->pluck('id');
+
+        return view('video.show', [
+            'video' => $video,
+            'allVideos' => $videos,
+            'watchedVideos' => $watched,
+        ]);
     }
 
     /**
