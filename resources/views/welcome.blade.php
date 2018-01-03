@@ -73,7 +73,11 @@
             @guest
                 <a class="button" href="{{ route('register') }}">
                     Sign up
+				</a> 
+				<a class="button" href="{{ route('login') }}">
+                    Log in
                 </a> 
+
             @endguest
         </div>
 	
@@ -156,6 +160,9 @@
             @guest
                 <a class="button" href="{{ route('register') }}">
                     Sign up
+                </a> 
+                <a class="button" href="{{ route('login') }}">
+                    Log in
                 </a> 
             @endguest
         </div>
