@@ -1008,6 +1008,15 @@ function toggleVideo(e) {
     });
 }
 
+document.querySelector('.mobile-toggle').addEventListener('click', mobileToggle);
+
+function mobileToggle(e) {
+    e.preventDefault();
+    var videoNav = document.querySelector('.video-nav');
+    videoNav.classList.toggle('mobile-closed');
+    videoNav.classList.toggle('mobile-open');
+}
+
 /***/ }),
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {

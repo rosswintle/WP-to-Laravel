@@ -43,7 +43,7 @@
         </nav>
 
         <main>
-            <nav class="video-nav">
+            <nav class="video-nav mobile-closed">
                 @yield('video-nav')
             </nav>
 

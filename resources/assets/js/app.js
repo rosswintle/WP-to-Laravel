@@ -37,3 +37,12 @@ function toggleVideo( e ) {
         .catch( error => console.log(error) );
 
 }
+
+document.querySelector('.mobile-toggle').addEventListener('click', mobileToggle);
+
+function mobileToggle(e) {
+    e.preventDefault();
+    const videoNav = document.querySelector('.video-nav');
+    videoNav.classList.toggle('mobile-closed');
+    videoNav.classList.toggle('mobile-open');
+}

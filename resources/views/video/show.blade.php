@@ -3,8 +3,15 @@
 @section('title', $video->name)
 
 @section('video-nav')
-    
+
     <ul>
+        <li class="mobile-toggle">
+            <a href="#0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
         @foreach( $allVideos as $thisIndex => $thisVideo )
             <li>
                 <a 
