@@ -27,9 +27,11 @@ class RegisterController extends Controller
     /**
      * Where to redirect users after registration.
      *
-     * @var string
+     * 
      */
-    protected $redirectTo = '/home';
+    function redirectTo() {
+        return action('VideoController@show', ['video' => 1]);
+    }
 
     /**
      * Create a new controller instance.
