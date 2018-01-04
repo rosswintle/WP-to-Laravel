@@ -184,9 +184,11 @@ main {
     }
 
     &.mobile-closed {
-        width: 40px;
-        ul {
-            @include small {
+        @include small {
+            width: calc( 40px + 1rem + 10px );
+            margin-right: 0;
+
+            ul {
 
                 width: 40px;
                 margin-right: 30px;
@@ -221,6 +223,10 @@ main {
     display: block;
     width: 65%;
     float: left;
+
+    @include small {
+        width: calc( 100% - 40px - 1rem - 10px );
+    }
 }
 
 /* Responsive Embed Cleverness */

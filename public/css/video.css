@@ -178,11 +178,12 @@ main:after {
   text-transform: uppercase;
 }
 
-.video-nav.mobile-closed {
-  width: 40px;
-}
-
 @media screen and (max-width: 768px) {
+  .video-nav.mobile-closed {
+    width: calc( 40px + 1rem + 10px);
+    margin-right: 0;
+  }
+
   .video-nav.mobile-closed ul {
     width: 40px;
     margin-right: 30px;
@@ -221,6 +222,12 @@ main:after {
   display: block;
   width: 65%;
   float: left;
+}
+
+@media screen and (max-width: 768px) {
+  .video-main {
+    width: calc( 100% - 40px - 1rem - 10px);
+  }
 }
 
 /* Responsive Embed Cleverness */
