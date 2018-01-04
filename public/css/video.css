@@ -90,20 +90,21 @@ main:after {
   padding: 0.1rem 1rem;
   background-color: #0096dd;
   color: #FFF;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .video-nav a.current-video,
-.video-nav a.current-video:visited {
-  color: #FFF;
-  background-color: #0073aa;
+.video-nav a.current-video:visited,
+.video-nav a:hover,
+.video-nav a:focus,
+.video-nav a:active {
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
 }
 
 .video-nav a.watched {
   background-color: #FB503B;
-}
-
-.video-nav a.watched.current-video {
-  background-color: #fa2309;
 }
 
 .video-nav h3 {

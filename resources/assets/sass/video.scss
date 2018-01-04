@@ -96,18 +96,20 @@ main {
         // color: #AAA;
         background-color: lighten( $wordpress-blue, 10% );
         color: #FFF;
+        transition: all 0.3s;
     }
 
-    a.current-video, a.current-video:visited {
+    a.current-video, a.current-video:visited, a:hover, a:focus, a:active {
         //color: $text-color;
-        color: #FFF;
-        background-color: $wordpress-blue;
+        // color: #FFF;
+        // background-color: $wordpress-blue;
+        transform: translateX( 1rem );
     }
     a.watched {
         background-color: $laravel-red;
     }
     a.watched.current-video {
-        background-color: darken( $laravel-red, 10% );
+        // background-color: darken( $laravel-red, 10% );
     }
 
     
