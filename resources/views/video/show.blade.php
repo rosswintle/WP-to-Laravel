@@ -77,6 +77,10 @@
             if (event.data == YT.PlayerState.ENDED) {
                 axios.post( '{{ action( 'VideoApiController@markWatched', ['video' => $video->id] ) }}' )
                 .then( function () {
+                    const videoNavElem = document.querySelector('.video-nav .current-video');
+                    const videoMetaElem = videoNavElem.querySelector('.video-meta');
+                    videoMetaElem.innerHTML = videoMetaElem.innerHTML + " (Watched)";
+                    videoNavElem.classList.add('watched');
                     console.log('Video {{ $video->id }} marked watched');
                 })
                 .catch( function( error ) {
