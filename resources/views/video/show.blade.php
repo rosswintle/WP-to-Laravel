@@ -39,7 +39,9 @@
         {{ $video->description }}
     </p>
 
-    <div id="player"></div>
+    <div class="videoWrapper">
+        <div id="player"></div>
+    </div>
 
     <script>
         // This code loads the IFrame Player API code asynchronously.
