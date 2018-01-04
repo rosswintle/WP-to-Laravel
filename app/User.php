@@ -50,7 +50,7 @@ class User extends Authenticatable
     }
 
     function getLastWatchedIdAttribute() {
-        return $this->watched->sortBy('order')->pluck('id')->last();
+        return $this->watched->sortBy('order')->pluck('id')->last() ?: 1;
     }
 
     function isAdmin() {
