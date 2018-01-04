@@ -3,9 +3,9 @@
 @section('title', $video->name)
 
 @section('video-nav')
-
+    
     <ul>
-        @foreach( $allVideos as $thisVideo )
+        @foreach( $allVideos as $thisIndex => $thisVideo )
             <li>
                 <a 
                     href="{{ action( 'VideoController@show', ['video' => $thisVideo->id] ) }}"
@@ -13,6 +13,9 @@
                     <h3>
                         {{ $thisVideo->name }}
                     </h3>
+                    <p class="video-order">
+                        {{ $thisIndex }}
+                    </p>
                     <p class="video-meta">
                         {{ intdiv( $thisVideo->duration, 60 ) }}:{{ sprintf('%02d', $thisVideo->duration % 60) }}
                         @if ( $watchedVideos->contains( $thisVideo->id ) )
