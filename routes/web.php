@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')->middleware(['auth', 'admin'])->group( function () {
+
+    Route::get('/videos', 'AdminVideoController@index')->name('home');
+
+});
 
 Route::group( [ 'prefix' => 'video', 'middleware' => [ 'auth' ] ], function () {
 
