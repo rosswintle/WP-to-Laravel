@@ -10,6 +10,14 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    const ROLE_NORMAL = 0;
+    const ROLE_ADMIN = 1;
+
+    public $lookupRole = [
+        self::ROLE_NORMAL => 'Normal',
+        self::ROLE_ADMIN => 'Admin',
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -25,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'role',
     ];
 
     /**
@@ -43,6 +51,10 @@ class User extends Authenticatable
 
     function getLastWatchedIdAttribute() {
         return $this->watched->sortBy('order')->pluck('id')->last();
+    }
+
+    function isAdmin() {
+        return $this->role == self::ROLE_ADMIN;
     }
 
     /**
