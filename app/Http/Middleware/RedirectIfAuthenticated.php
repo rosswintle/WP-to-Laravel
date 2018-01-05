@@ -18,7 +18,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            $user = Auth::user();
+            return redirect()->action('VideoController@show', ['video' => $user->last_watched_id]);
         }
 
         return $next($request);

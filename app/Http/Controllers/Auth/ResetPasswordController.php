@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Support\Facades\Auth;
 
 class ResetPasswordController extends Controller
 {
@@ -23,9 +24,11 @@ class ResetPasswordController extends Controller
     /**
      * Where to redirect users after resetting their password.
      *
-     * @var string
      */
-    protected $redirectTo = '/home';
+    function redirectTo() {
+        $user = Auth::user();
+        return action('VideoController@show', ['video' => $user->last_watched_id]);
+    }
 
     /**
      * Create a new controller instance.
