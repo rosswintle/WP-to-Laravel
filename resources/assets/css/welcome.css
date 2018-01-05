@@ -47,10 +47,9 @@ header {
 }
 .welcome-buttons .button:hover, .welcome-buttons .button:active, .welcome-buttons .button:focus {
 	text-decoration: none;
-	/* background-color: #FFF; */
-	/* color: #FB503B; */
-	background-color: #FB503B;
-	border-color: #FB503B;
+	color: #0073aa;
+	background-color: #FFF;
+	border-color: #FFF;
 }
 h1 {
 	font-weight: 200;
