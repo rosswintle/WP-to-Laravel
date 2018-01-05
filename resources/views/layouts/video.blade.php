@@ -48,6 +48,10 @@
 
     </div>
 
+    <footer>
+        Made by and &copy; <a href="https://rosswintle.uk/">Ross Wintle</a>, 2018 | <a href="{{ '/privacy' }}">Privacy</a>
+    </footer>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

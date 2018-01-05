@@ -23,11 +23,16 @@ body {
     box-sizing: border-box;
 }
 
-.navbar {
+@mixin blue-bar {
     height: 50px;
     max-width: 960px;
     margin: 0 auto;
     background-color: $wordpress-blue;
+    color: #FFF;    
+}
+
+.navbar {
+    @include blue-bar;
     border-bottom: 1px solid #FFF;
 
     .navbar-brand {
@@ -57,6 +62,18 @@ body {
         padding: 0 1rem;
         text-transform: uppercase;
         text-decoration: none;
+        color: #FFF;
+    }
+
+}
+
+footer {
+    @include blue-bar;
+    text-align: center;
+    line-height: 50px;
+    font-size: 0.9rem;
+
+    a {
         color: #FFF;
     }
 }
