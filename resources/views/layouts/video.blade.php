@@ -43,14 +43,9 @@
         </nav>
 
         <main>
-            <nav class="video-nav mobile-closed">
-                @yield('video-nav')
-            </nav>
-
-            <article class="video-main">
-                @yield('video-main')
-            </article>
+            @yield('content')
         </main>
+
     </div>
 
     <!-- Scripts -->
