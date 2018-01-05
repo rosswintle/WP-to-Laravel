@@ -1,7 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,600,400italic);body {
-  font-family: "Source Sans Pro", sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,600,400italic);* {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .navbar {
@@ -24,7 +27,7 @@
   display: block;
   height: 50px;
   margin: 0;
-  padding: 0 15px 0 0;
+  padding: 0 10px 0 0;
   list-style: none;
   text-align: right;
 }
@@ -39,7 +42,7 @@
 .navbar a {
   display: inline-block;
   line-height: 50px;
-  padding: 0 1rem;
+  padding: 0 0.8rem;
   text-transform: uppercase;
   text-decoration: none;
   color: #FFF;
