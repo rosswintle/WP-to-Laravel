@@ -21,7 +21,7 @@
                         {{ $thisVideo->name }}
                     </h3>
                     <p class="video-order">
-                        {{ $thisIndex }}
+                        {{ $thisIndex + 1 }}
                     </p>
                     <p class="video-meta">
                         {{ intdiv( $thisVideo->duration, 60 ) }}:{{ sprintf('%02d', $thisVideo->duration % 60) }}
