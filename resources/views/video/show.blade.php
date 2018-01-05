@@ -73,6 +73,7 @@
                     modestbranding: 1,
                     rel: 0,
                     showinfo: 0,
+                    origin: '{{ env('APP_URL', '') }}',
                 },
                 events: {
                 'onReady': onPlayerReady,
