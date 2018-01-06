@@ -42,7 +42,7 @@ class User extends Authenticatable
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     function watched() {
-        return $this->belongsToMany('App\Video', 'watched_videos');
+        return $this->belongsToMany('App\Video', 'watched_videos')->withTimestamps();
     }
 
     function getWatchedIdsAttribute() {

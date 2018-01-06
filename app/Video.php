@@ -25,7 +25,7 @@ class Video extends Model
     ];
 
     function watchedBy() {
-    	return $this->belongsToMany('App\User', 'watched_videos');
+    	return $this->belongsToMany('App\User', 'watched_videos')->withTimestamps();
     }
 
 
