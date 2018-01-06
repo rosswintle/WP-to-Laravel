@@ -28,7 +28,7 @@ class AdminVideoController extends Controller
             abort('403', 'Not allowed');
         }
 
-        $videos = \App\Video::all();
+        $videos = \App\Video::withCount('watchedBy')->get();
         $myVideos = Auth::user()->watched->pluck('id');
 
         return view('home', [

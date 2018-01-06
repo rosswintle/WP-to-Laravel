@@ -17,7 +17,7 @@
                                 <td>Name</td>
                                 <td>Description</td>
                                 <td>URL</td>
-                                <td>Watched</td>
+                                <td>Watched count</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,16 +33,7 @@
                                     <td>{{ $video->description }}</td>
                                     <td>{{ $video->url }}</td>
                                     <td>
-                                        <span class="watched-status">
-                                            {{ $watched->contains($video->id) ? 'Yes' : 'No' }}
-                                        </span>
-                                        <br>
-                                        <a class="watched-toggle"
-                                           data-toggle-url="{{ action( 'VideoApiController@toggleWatched', [ 'video' => $video->id ] ) }}"
-                                           data-video-id="{{ $video->id }}"
-                                           href="{{ action( 'VideoController@toggleWatched', ['video' => $video->id] ) }}">
-                                            Toggle
-                                        </a>
+                                        {{ $video->watched_by_count }}
                                     </td>
                                 </tr>
                             @endforeach
