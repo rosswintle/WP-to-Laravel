@@ -74,12 +74,14 @@ class AdminVideoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update( Video $video )
+    public function update( Video $video, Request $request )
     {
         if (! Auth::check()) {
             abort('403', 'Not allowed');
         }
 
-        return redirect( 'AdminVideoController@index' );
+        $request->session()->flash( 'message', 'Video updated' );
+
+        return redirect()->action( 'AdminVideoController@show', [ 'video' => $video ] );
     }
 }

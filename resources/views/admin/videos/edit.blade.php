@@ -11,44 +11,64 @@
                 <div class="panel-body">
                     <h2>{{ $video->title }}</h2>
                     <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Id</td>
-                                <td>{{ $video->id }}</td>
-                            </tr>
-                            <tr>
-                                <td>Order</td>
-                                <td>{{ $video->order }}</td>
-                            </tr>
-                            <tr>
-                                <td>Name</td>
-                                <td>{{ $video->name }}</td>
-                            </tr>
-                            <tr>
-                                <td>Description</td>
-                                <td>{{ $video->description }}</td>
-                            </tr>
-                            <tr>
-                                <td>URL</td>
-                                <td>{{ $video->url }}</td>
-                            </tr>
-                            <tr>
-                                <td>Video ID</td>
-                                <td>{{ $video->videoId }}</td>
-                            </tr>
-                            <tr>
-                                <td>Views</td>
-                                <td>{{ $video->watched_count }}</td>
-                            </tr>
-                            <tr>
-                                <td>Actions</td>
-                                <td>
-                                    <a class="btn btn-default" href="{{ action( 'AdminVideoController@edit', [ 'video' => $video ] ) }}">
-                                        Edit
-                                    </a>
-                                </td>
-                            <tr>
-                        </tbody>
+                        {!! Form::open(['method' => 'PATCH', 'action' => [ 'AdminVideoController@update', $video ]]) !!}
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{ Form::label( 'id', 'ID' ) }}
+                                    </td>
+                                    <td>
+                                        {{ $video->id }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ Form::label( 'order', 'Order' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::number( 'order', $video->order ) }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ Form::label( 'name', 'Name' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::text( 'name', $video->name ) }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ Form::label( 'description', 'Description' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::textarea( 'description', $video->description ) }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ Form::label( 'url', 'URL' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::text( 'url', $video->url ) }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ Form::label( 'videoId', 'Video ID' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::text( 'videoId', $video->videoId ) }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Actions</td>
+                                    <td>
+                                        {{ Form::submit('Save') }}
+                                    </td>
+                                <tr>
+                            </tbody>
+                        {!! Form::close() !!}
                     </table>
                 </div>
             </div>
