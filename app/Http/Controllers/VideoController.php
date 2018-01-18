@@ -102,7 +102,7 @@ class VideoController extends Controller
     {
         $user = Auth::user();
         $user->watched()->attach($video);
-        return redirect('home');
+        return $this->redirectToVideo($video);
     }
 
     /**
@@ -115,7 +115,7 @@ class VideoController extends Controller
     {
         $user = Auth::user();
         $user->watched()->detach($video);
-        return redirect('home');
+        return $this->redirectToVideo($video);
     }
 
     /**
@@ -132,6 +132,16 @@ class VideoController extends Controller
         } else {
             $user->watched()->attach($video);
         }
-        return redirect('home');
+        return $this->redirectToVideo( $video );
+    }
+
+    /**
+     * Toggle watched status
+     *
+     * @param  \App\Video  $video
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToVideo( $video ) {
+        return redirect()->action( 'VideoController@show', [ 'video' => $video->id ] );
     }
 }
