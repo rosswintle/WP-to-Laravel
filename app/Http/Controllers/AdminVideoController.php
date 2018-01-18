@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Video;
 
 class AdminVideoController extends Controller
 {
@@ -18,7 +19,7 @@ class AdminVideoController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the video index.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,12 +30,56 @@ class AdminVideoController extends Controller
         }
 
         $videos = \App\Video::withCount('watchedBy')->get();
-        $myVideos = Auth::user()->watched->pluck('id');
 
-        return view('home', [
+        return view('admin.videos.index', [
             'videos' => $videos,
-            'user' => Auth::user(),
-            'watched' => $myVideos,
             ]);
+    }
+
+
+    /**
+     * Show a video.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show( Video $video )
+    {
+        if (! Auth::check()) {
+            abort('403', 'Not allowed');
+        }
+
+        return view('admin.videos.show', [
+            'video' => $video,
+            ]);
+    }
+
+
+    /**
+     * Edit a video.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit( Video $video )
+    {
+        if (! Auth::check()) {
+            abort('403', 'Not allowed');
+        }
+
+        return view('admin.videos.edit', [
+            'video' => $video,
+            ]);
+    }
+    /**
+     * Update a video.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update( Video $video )
+    {
+        if (! Auth::check()) {
+            abort('403', 'Not allowed');
+        }
+
+        return redirect( 'AdminVideoController@index' );
     }
 }

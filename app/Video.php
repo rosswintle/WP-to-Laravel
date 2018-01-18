@@ -28,5 +28,9 @@ class Video extends Model
     	return $this->belongsToMany('App\User', 'watched_videos')->withTimestamps();
     }
 
+    function getWatchedCountAttribute() {
+        return $this->watchedBy()->count();
+    }
+
 
 }

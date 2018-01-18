@@ -18,7 +18,7 @@ Auth::routes();
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group( function () {
 
-    Route::get('/videos', 'AdminVideoController@index');
+    Route::resource('/videos', 'AdminVideoController')->only(['index', 'show', 'edit', 'update']);
 
 });
 

@@ -18,6 +18,7 @@
                                 <td>Description</td>
                                 <td>URL</td>
                                 <td>Watched count</td>
+                                <td>Actions</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,6 +35,14 @@
                                     <td>{{ $video->url }}</td>
                                     <td>
                                         {{ $video->watched_by_count }}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-default" href="{{ action( 'AdminVideoController@show', [ 'video' => $video ] ) }}">
+                                            View
+                                        </a>
+                                        <a class="btn btn-default" href="{{ action( 'AdminVideoController@edit', [ 'video' => $video ] ) }}">
+                                            Edit
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach
