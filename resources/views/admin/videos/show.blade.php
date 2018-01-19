@@ -6,10 +6,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             
-            @if(Session::has('message'))
-                <p class="alert alert-info">{{ Session::get('message') }}</p>
-            @endif
-            
+            @component('components.messages')
+            @endcomponent
+
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 

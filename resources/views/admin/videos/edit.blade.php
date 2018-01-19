@@ -8,6 +8,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
+                @component('components.messages')
+                @endcomponent
+
                 <div class="panel-body">
                     <h2>{{ $video->title }}</h2>
                     <table class="table">
@@ -62,9 +65,11 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Actions</td>
                                     <td>
-                                        {{ Form::submit('Save') }}
+                                        {{ Form::label( 'submit', 'Actions' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::submit('Save', [ 'class' => 'btn btn-default' ]) }}
                                     </td>
                                 <tr>
                             </tbody>

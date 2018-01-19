@@ -80,6 +80,17 @@ class AdminVideoController extends Controller
             abort('403', 'Not allowed');
         }
 
+        $data = $request->validate([
+            'name' => 'required',
+            'description' => '',
+            'order' => 'numeric',
+            'url' => 'required|URL',
+            'duration' => 'numeric',
+            'videoId' => 'required|min:7|max:12',
+        ]);
+
+        $video->update( $data );
+
         $request->session()->flash( 'message', 'Video updated' );
 
         return redirect()->action( 'AdminVideoController@show', [ 'video' => $video ] );
