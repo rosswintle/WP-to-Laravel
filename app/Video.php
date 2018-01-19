@@ -13,7 +13,7 @@ class Video extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'order', 'description', 'url'
+        'name', 'order', 'description', 'notes', 'url',
     ];
 
     /**

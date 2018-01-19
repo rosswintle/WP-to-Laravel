@@ -83,6 +83,7 @@ class AdminVideoController extends Controller
         $data = $request->validate([
             'name' => 'required',
             'description' => '',
+            'notes' => '',
             'order' => 'numeric',
             'url' => 'required|URL',
             'duration' => 'numeric',

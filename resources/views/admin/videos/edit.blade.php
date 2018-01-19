@@ -50,6 +50,14 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        {{ Form::label( 'notes', 'Notes' ) }}
+                                    </td>
+                                    <td>
+                                        {{ Form::textarea( 'notes', $video->notes ) }}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         {{ Form::label( 'url', 'URL' ) }}
                                     </td>
                                     <td>

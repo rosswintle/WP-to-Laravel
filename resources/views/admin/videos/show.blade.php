@@ -33,6 +33,10 @@
                                 <td>{{ $video->description }}</td>
                             </tr>
                             <tr>
+                                <td>Notes</td>
+                                <td>{{ $video->notes }}</td>
+                            </tr>
+                            <tr>
                                 <td>URL</td>
                                 <td>{{ $video->url }}</td>
                             </tr>
