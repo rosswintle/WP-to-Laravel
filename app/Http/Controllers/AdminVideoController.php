@@ -15,7 +15,7 @@ class AdminVideoController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware( [ 'auth', 'admin' ] );
     }
 
     /**
@@ -29,7 +29,7 @@ class AdminVideoController extends Controller
             abort('403', 'Not allowed');
         }
 
-        $videos = \App\Video::withCount('watchedBy')->get();
+        $videos = Video::withCount('watchedBy')->get();
 
         return view('admin.videos.index', [
             'videos' => $videos,

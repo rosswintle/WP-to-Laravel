@@ -13,7 +13,7 @@ class User extends Authenticatable
     const ROLE_NORMAL = 0;
     const ROLE_ADMIN = 1;
 
-    public $lookupRole = [
+    public static $lookupRole = [
         self::ROLE_NORMAL => 'Normal',
         self::ROLE_ADMIN => 'Admin',
     ];
