@@ -14,7 +14,7 @@ class AddNotesToVideos extends Migration
     public function up()
     {
         Schema::table('videos', function (Blueprint $table) {
-            $table->text( 'notes' )->nullable()->default( '' );
+            $table->text( 'notes' )->nullable();
         });
     }
 
