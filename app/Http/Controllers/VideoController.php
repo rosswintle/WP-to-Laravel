@@ -47,7 +47,7 @@ class VideoController extends Controller
      */
     public function show(Video $video)
     {
-        $videos = Video::all();
+        $videos = Video::orderBy('order')->get();
         $watched = Auth::user()->watched->pluck('id');
 
         return view('video.show', [
