@@ -29,6 +29,9 @@ header {
 	margin-top: 10vh;
 	margin-bottom: 10vh;
 }
+.notice {
+	font-style: italic;
+}
 .welcome-buttons {
 	margin-top: 8vh;
 	text-align: center;

@@ -10,7 +10,7 @@
 		And thanks for looking this thing up. It's a bit of a trial for me putting this together,
 		and I hope it's useful for someone.
 
-		I'm flattered that you're hear. Why not drop me a line @magicroundabout and let me know you
+		I'm flattered that you're here. Why not drop me a line @magicroundabout and let me know you
 		found this.
 
 		Thanks
@@ -84,7 +84,9 @@
 	</header>
 	
 	<article>
-	
+		
+		<p class="notice">NOTE: This course is based on Laravel 5.5, which is quite old now. The principles still apply, and it's still a good conversion course. But bear in mind that a lot has changed since I made it. I'm hoping to update it soon.</p>
+
 		<h3>A free set of video tutorials that explain Laravel to WordPress developers</h3>
 		<p>
 			I've had conversations with lots of people about the struggles of using WordPress for things other than publishing, content management, and eCommerce.</p>
