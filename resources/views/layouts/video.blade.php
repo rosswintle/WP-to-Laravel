@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/video.css') }}" rel="stylesheet">
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
 </head>
 <body>
     <div id="app">
