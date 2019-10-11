@@ -88,30 +88,12 @@
 		<p class="notice">NOTE: This course is based on Laravel 5.5, which is quite old now. The principles still apply, and it's still a good conversion course. But bear in mind that a lot has changed since I made it. I'm hoping to update it soon.</p>
 
 		<h3>A free set of video tutorials that explain Laravel to WordPress developers</h3>
-		<p>
-			I've had conversations with lots of people about the struggles of using WordPress for things other than publishing, content management, and eCommerce.</p>
-		<p>These days, conversation often turns to the Laravel framework, which I now often use for those things that WordPress isn’t a good fit for.</p>
-		<p>I often promise to give people an overview of Laravel if they want one. And to fulfil that promise I’m recording a free set of video tutorials that explain Laravel to WordPress developers.
-		</p>
-
-		<h3>
-			Who is this for?	
-		</h3>
-		<p>
-			These videos are intended for people that understand PHP pretty well, and can use a command line/terminal. I probably assume a certain level of general software development knowledge too.
-
-			If you just copy and paste PHP snippets, it’s probably not for you.
-		</p>
-
-		<h3>
-			What are the videos about?
-		</h3>
-		<p>
-			The aim is not to teach you Laravel, but to show you around the main parts of it and to try and explain how the core concepts of WordPress map into Laravel concepts.
-		</p>
-		<p>
-			My hope is that you will end up wanting to find out more from the Laravel documentation; from other, better video courses; or from a good book.
-		</p>
+		<p>Ten short videos (plus two bonus episodes) aimed at introducing you to Laravel's concepts and getting you hooked on learning more.</p>
+		<p><strong>Watch the introduction below.</strong> Signing up lets you track progress and see a Laravel app in action.</p>
+		<div class="videoWrapper" style="width: 100%; max-width: 640px; margin: 0 auto;">
+			<iframe src="https://player.vimeo.com/video/336747278" width="640" height="400" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+		</div>
+		<h3>Course contents</h3>
 		<p>
 			The videos are each between 10 and 30 minutes long and there are 10 of them, plus some bonus content.  The contents are:
 		</p>
@@ -130,6 +112,33 @@
                 <li><strong>Bonus: Addendum and resources:</strong>: Some things I missed that are worth knowing, and where to go to learn more</li>
                 <li><strong>Bonus: Behind the scenes:</strong>: A peek into the tools I used to make the series and that I use to write both Laravel and PHP code</li>
 			</ol>
+		</p>
+
+		<h3>
+			Who is this for?	
+		</h3>
+		<p>
+			These videos are intended for people that understand PHP pretty well, and can use a command line/terminal. I probably assume a certain level of general software development knowledge too.
+
+			If you just copy and paste PHP snippets, it’s probably not for you.
+		</p>
+
+
+		<h3>
+			What are the videos about?
+		</h3>
+		<p>
+			The aim is not to teach you Laravel, but to show you around the main parts of it and to try and explain how the core concepts of WordPress map into Laravel concepts.
+		</p>
+		<p>
+			My hope is that you will end up wanting to find out more from the Laravel documentation; from other, better video courses; or from a good book.
+		</p>
+
+		<h3>Why did you make this?</h3>
+		<p>
+			I've had conversations with lots of people about the struggles of using WordPress for things other than publishing, content management, and eCommerce.</p>
+		<p>These days, conversation often turns to the Laravel framework, which I now often use for those things that WordPress isn’t a good fit for.</p>
+		<p>I often promise to give people an overview of Laravel if they want one. And to fulfil that promise I’m recording a free set of video tutorials that explain Laravel to WordPress developers.
 		</p>
 
 		<h3>What are the videos like?</h3>
