@@ -21,5 +21,8 @@
     "sass-loader": "^7.2.0",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "@vimeo/player": "^2.10.0"
   }
 }
