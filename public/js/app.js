@@ -1,97 +1,11 @@
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
-/******/ })
-/************************************************************************/
-/******/ ({
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
 
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/lib/axios.js");
 
@@ -101,8 +15,7 @@ module.exports = __webpack_require__(/*! ./lib/axios */ "./node_modules/axios/li
 /*!************************************************!*\
   !*** ./node_modules/axios/lib/adapters/xhr.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -292,8 +205,7 @@ module.exports = function xhrAdapter(config) {
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/axios.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -360,8 +272,7 @@ module.exports.default = axios;
 /*!*************************************************!*\
   !*** ./node_modules/axios/lib/cancel/Cancel.js ***!
   \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -391,8 +302,7 @@ module.exports = Cancel;
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/cancel/CancelToken.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -460,8 +370,7 @@ module.exports = CancelToken;
 /*!***************************************************!*\
   !*** ./node_modules/axios/lib/cancel/isCancel.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -477,8 +386,7 @@ module.exports = function isCancel(value) {
 /*!**********************************************!*\
   !*** ./node_modules/axios/lib/core/Axios.js ***!
   \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -584,8 +492,7 @@ module.exports = Axios;
 /*!***********************************************************!*\
   !*** ./node_modules/axios/lib/core/InterceptorManager.js ***!
   \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -648,8 +555,7 @@ module.exports = InterceptorManager;
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/core/buildFullPath.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -680,8 +586,7 @@ module.exports = function buildFullPath(baseURL, requestedURL) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/core/createError.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -710,8 +615,7 @@ module.exports = function createError(message, config, code, request, response) 
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/core/dispatchRequest.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -801,8 +705,7 @@ module.exports = function dispatchRequest(config) {
 /*!*****************************************************!*\
   !*** ./node_modules/axios/lib/core/enhanceError.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -855,8 +758,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/core/mergeConfig.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -954,8 +856,7 @@ module.exports = function mergeConfig(config1, config2) {
 /*!***********************************************!*\
   !*** ./node_modules/axios/lib/core/settle.js ***!
   \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -991,8 +892,7 @@ module.exports = function settle(resolve, reject, response) {
 /*!******************************************************!*\
   !*** ./node_modules/axios/lib/core/transformData.js ***!
   \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1023,11 +923,11 @@ module.exports = function transformData(data, headers, fns) {
 /*!********************************************!*\
   !*** ./node_modules/axios/lib/defaults.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
+/* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
+
 
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
 var normalizeHeaderName = __webpack_require__(/*! ./helpers/normalizeHeaderName */ "./node_modules/axios/lib/helpers/normalizeHeaderName.js");
@@ -1126,7 +1026,6 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -1134,8 +1033,7 @@ module.exports = defaults;
 /*!************************************************!*\
   !*** ./node_modules/axios/lib/helpers/bind.js ***!
   \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1157,8 +1055,7 @@ module.exports = function bind(fn, thisArg) {
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/helpers/buildURL.js ***!
   \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1239,8 +1136,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 /*!*******************************************************!*\
   !*** ./node_modules/axios/lib/helpers/combineURLs.js ***!
   \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1265,8 +1161,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 /*!***************************************************!*\
   !*** ./node_modules/axios/lib/helpers/cookies.js ***!
   \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1330,8 +1225,7 @@ module.exports = (
 /*!*********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isAbsoluteURL.js ***!
   \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1356,8 +1250,7 @@ module.exports = function isAbsoluteURL(url) {
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isAxiosError.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1379,8 +1272,7 @@ module.exports = function isAxiosError(payload) {
 /*!***********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/isURLSameOrigin.js ***!
   \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1459,8 +1351,7 @@ module.exports = (
 /*!***************************************************************!*\
   !*** ./node_modules/axios/lib/helpers/normalizeHeaderName.js ***!
   \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1483,8 +1374,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 /*!********************************************************!*\
   !*** ./node_modules/axios/lib/helpers/parseHeaders.js ***!
   \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1548,8 +1438,7 @@ module.exports = function parseHeaders(headers) {
 /*!**************************************************!*\
   !*** ./node_modules/axios/lib/helpers/spread.js ***!
   \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module) => {
 
 "use strict";
 
@@ -1587,8 +1476,7 @@ module.exports = function spread(callback) {
 /*!*****************************************!*\
   !*** ./node_modules/axios/lib/utils.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
@@ -1946,12 +1834,114 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/assets/js/app.js":
+/*!************************************!*\
+  !*** ./resources/assets/js/app.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+
+document.querySelectorAll('.watched-toggle').forEach(function (elem) {
+  elem.addEventListener('click', toggleVideo);
+});
+
+function toggleVideo(e) {
+  e.preventDefault();
+  var toggleUrl = this.dataset.toggleUrl;
+  var statusElem = this.parentNode.querySelector('.watched-status');
+  axios.post(toggleUrl).then(function (response) {
+    if (1 == response.data.newStatus) {
+      statusElem.innerHTML = 'Yes';
+    } else {
+      statusElem.innerHTML = 'No';
+    }
+  })["catch"](function (error) {
+    return console.log(error);
+  });
+}
+
+document.querySelector('.mobile-toggle').addEventListener('click', mobileToggle);
+
+function mobileToggle(e) {
+  e.preventDefault();
+  var videoNav = document.querySelector('.video-nav');
+  videoNav.classList.toggle('mobile-closed');
+  videoNav.classList.toggle('mobile-open');
+}
+
+/***/ }),
+
+/***/ "./resources/assets/js/bootstrap.js":
+/*!******************************************!*\
+  !*** ./resources/assets/js/bootstrap.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/**
+ * We'll load jQuery and the Bootstrap jQuery plugin which provides support
+ * for JavaScript based Bootstrap features such as modals and tabs. This
+ * code may be modified to fit the specific needs of your application.
+ */
+
+try {
+  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+  __webpack_require__(/*! bootstrap-sass */ "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
+} catch (e) {}
+/**
+ * We'll load the axios HTTP library which allows us to easily issue requests
+ * to our Laravel back-end. This library automatically handles sending the
+ * CSRF token as a header based on the value of the "XSRF" token cookie.
+ */
+
+
+window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+/**
+ * Next we will register the CSRF Token as a common header with Axios so that
+ * all outgoing HTTP requests automatically have it attached. This is just
+ * a simple convenience so we don't have to attach every token manually.
+ */
+
+var token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+/**
+ * Echo exposes an expressive API for subscribing to channels and listening
+ * for events that are broadcast by Laravel. Echo and event broadcasting
+ * allows your team to easily build robust real-time web applications.
+ */
+// import Echo from 'laravel-echo'
+// window.Pusher = require('pusher-js');
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: 'your-pusher-key'
+// });
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js ***!
   \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (() => {
 
 /*!
  * Bootstrap v3.4.1 (https://getbootstrap.com/)
@@ -4541,8 +4531,7 @@ if (typeof jQuery === 'undefined') {
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
   \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
  * jQuery JavaScript Library v3.6.0
@@ -15388,7 +15377,7 @@ if ( true ) {
 	!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = (function() {
 		return jQuery;
 	}).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 }
 
 
@@ -15434,10 +15423,10 @@ return jQuery;
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
   \***************************************/
-/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license
  * Lodash <https://lodash.com/>
  * Copyright OpenJS Foundation and other contributors <https://openjsf.org/>
@@ -15866,7 +15855,7 @@ return jQuery;
       freeParseInt = parseInt;
 
   /** Detect free variable `global` from Node.js. */
-  var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+  var freeGlobal = typeof __webpack_require__.g == 'object' && __webpack_require__.g && __webpack_require__.g.Object === Object && __webpack_require__.g;
 
   /** Detect free variable `self`. */
   var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -15878,7 +15867,7 @@ return jQuery;
   var freeExports =  true && exports && !exports.nodeType && exports;
 
   /** Detect free variable `module`. */
-  var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
+  var freeModule = freeExports && "object" == 'object' && module && !module.nodeType && module;
 
   /** Detect the popular CommonJS extension `module.exports`. */
   var moduleExports = freeModule && freeModule.exports === freeExports;
@@ -32633,13 +32622,51 @@ return jQuery;
     !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() {
       return _;
     }).call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
   }
   // Check for `exports` after `define` in case a build optimizer adds it.
   else {}
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js"), __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
+
+/***/ }),
+
+/***/ "./resources/assets/sass/app.scss":
+/*!****************************************!*\
+  !*** ./resources/assets/sass/app.scss ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/video.scss":
+/*!******************************************!*\
+  !*** ./resources/assets/sass/video.scss ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/assets/sass/auth.scss":
+/*!*****************************************!*\
+  !*** ./resources/assets/sass/auth.scss ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -32647,8 +32674,7 @@ return jQuery;
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 // shim for using process in browser
 var process = module.exports = {};
@@ -32836,223 +32862,174 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 
-/***/ }),
-
-/***/ "./node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ "./node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-
-/***/ "./resources/assets/js/app.js":
-/*!************************************!*\
-  !*** ./resources/assets/js/app.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-__webpack_require__(/*! ./bootstrap */ "./resources/assets/js/bootstrap.js");
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-
-document.querySelectorAll('.watched-toggle').forEach(function (elem) {
-  elem.addEventListener('click', toggleVideo);
-});
-
-function toggleVideo(e) {
-  e.preventDefault();
-  var toggleUrl = this.dataset.toggleUrl;
-  var statusElem = this.parentNode.querySelector('.watched-status');
-  axios.post(toggleUrl).then(function (response) {
-    if (1 == response.data.newStatus) {
-      statusElem.innerHTML = 'Yes';
-    } else {
-      statusElem.innerHTML = 'No';
-    }
-  })["catch"](function (error) {
-    return console.log(error);
-  });
-}
-
-document.querySelector('.mobile-toggle').addEventListener('click', mobileToggle);
-
-function mobileToggle(e) {
-  e.preventDefault();
-  var videoNav = document.querySelector('.video-nav');
-  videoNav.classList.toggle('mobile-closed');
-  videoNav.classList.toggle('mobile-open');
-}
-
-/***/ }),
-
-/***/ "./resources/assets/js/bootstrap.js":
-/*!******************************************!*\
-  !*** ./resources/assets/js/bootstrap.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-  window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-  __webpack_require__(/*! bootstrap-sass */ "./node_modules/bootstrap-sass/assets/javascripts/bootstrap.js");
-} catch (e) {}
-/**
- * We'll load the axios HTTP library which allows us to easily issue requests
- * to our Laravel back-end. This library automatically handles sending the
- * CSRF token as a header based on the value of the "XSRF" token cookie.
- */
-
-
-window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-/**
- * Next we will register the CSRF Token as a common header with Axios so that
- * all outgoing HTTP requests automatically have it attached. This is just
- * a simple convenience so we don't have to attach every token manually.
- */
-
-var token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-/**
- * Echo exposes an expressive API for subscribing to channels and listening
- * for events that are broadcast by Laravel. Echo and event broadcasting
- * allows your team to easily build robust real-time web applications.
- */
-// import Echo from 'laravel-echo'
-// window.Pusher = require('pusher-js');
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
-
-/***/ }),
-
-/***/ "./resources/assets/sass/app.scss":
-/*!****************************************!*\
-  !*** ./resources/assets/sass/app.scss ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleError: Module Error (from ./node_modules/resolve-url-loader/index.js):\nresolve-url-loader: error initialising\n  Cannot find module 'rework'\nRequire stack:\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/lib/engine/rework.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/loader-runner/lib/loadLoader.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/loader-runner/lib/LoaderRunner.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModule.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModuleFactory.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/Compiler.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/webpack.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/utils/validate-options.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/utils/convert-argv.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/cli.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/bin/webpack.js\n  Require stack:\n    at Object.emitError (/Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModule.js:173:6)\n    at handleAsError (/Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js:282:12)\n    at Object.resolveUrlLoader (/Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js:204:12)");
-
-/***/ }),
-
-/***/ "./resources/assets/sass/auth.scss":
-/*!*****************************************!*\
-  !*** ./resources/assets/sass/auth.scss ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleError: Module Error (from ./node_modules/resolve-url-loader/index.js):\nresolve-url-loader: error initialising\n  Cannot find module 'rework'\nRequire stack:\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/lib/engine/rework.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/loader-runner/lib/loadLoader.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/loader-runner/lib/LoaderRunner.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModule.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModuleFactory.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/Compiler.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/webpack.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/utils/validate-options.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/utils/convert-argv.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/cli.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/bin/webpack.js\n  Require stack:\n    at Object.emitError (/Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModule.js:173:6)\n    at handleAsError (/Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js:282:12)\n    at Object.resolveUrlLoader (/Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js:204:12)");
-
-/***/ }),
-
-/***/ "./resources/assets/sass/video.scss":
-/*!******************************************!*\
-  !*** ./resources/assets/sass/video.scss ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleError: Module Error (from ./node_modules/resolve-url-loader/index.js):\nresolve-url-loader: error initialising\n  Cannot find module 'rework'\nRequire stack:\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/lib/engine/rework.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/loader-runner/lib/loadLoader.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/loader-runner/lib/LoaderRunner.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModule.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModuleFactory.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/Compiler.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/webpack.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/utils/validate-options.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/utils/convert-argv.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack-cli/bin/cli.js\n- /Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/bin/webpack.js\n  Require stack:\n    at Object.emitError (/Users/rosswintle/side-projects/wptolaravel/node_modules/webpack/lib/NormalModule.js:173:6)\n    at handleAsError (/Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js:282:12)\n    at Object.resolveUrlLoader (/Users/rosswintle/side-projects/wptolaravel/node_modules/resolve-url-loader/index.js:204:12)");
-
-/***/ }),
-
-/***/ 0:
-/*!************************************************************************************************************************************************!*\
-  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ./resources/assets/sass/video.scss ./resources/assets/sass/auth.scss ***!
-  \************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(/*! /Users/rosswintle/side-projects/wptolaravel/resources/assets/js/app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! /Users/rosswintle/side-projects/wptolaravel/resources/assets/sass/app.scss */"./resources/assets/sass/app.scss");
-__webpack_require__(/*! /Users/rosswintle/side-projects/wptolaravel/resources/assets/sass/video.scss */"./resources/assets/sass/video.scss");
-module.exports = __webpack_require__(/*! /Users/rosswintle/side-projects/wptolaravel/resources/assets/sass/auth.scss */"./resources/assets/sass/auth.scss");
-
-
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"/js/app": 0,
+/******/ 			"css/video": 0,
+/******/ 			"css/app": 0,
+/******/ 			"css/auth": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkIds[i]] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
+/******/ 	__webpack_require__.O(undefined, ["css/video","css/app","css/auth"], () => (__webpack_require__("./resources/assets/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/video","css/app","css/auth"], () => (__webpack_require__("./resources/assets/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/video","css/app","css/auth"], () => (__webpack_require__("./resources/assets/sass/video.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/video","css/app","css/auth"], () => (__webpack_require__("./resources/assets/sass/auth.scss")))
+/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ 	
+/******/ })()
+;
