@@ -42,7 +42,7 @@ class User extends Authenticatable
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
     function watched() {
-        return $this->belongsToMany('App\Video', 'watched_videos')->withTimestamps();
+        return $this->belongsToMany(\App\Video::class, 'watched_videos')->withTimestamps();
     }
 
     function getWatchedIdsAttribute() {
@@ -66,7 +66,7 @@ class User extends Authenticatable
      * @return Boolean
      */
     function hasWatched( $video ) {
-        $videoId = ( is_a( $video, 'App\Video' ) ) ? $video->id : $video;
+        $videoId = ( is_a( $video, \App\Video::class ) ) ? $video->id : $video;
 
         $watchedIds = $this->watched_ids;
         return $watchedIds->contains( $videoId );
