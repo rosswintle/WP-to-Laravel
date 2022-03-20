@@ -73,7 +73,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        Mail::to(env('ADMIN_EMAIL', 'wptolaravel@oikos.digital'))->send(new AdminUserRegistered($user));
+        Mail::to(config('settings.admin_email'))->send(new AdminUserRegistered($user));
 
         return $user;
     }
