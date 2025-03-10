@@ -2,93 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
-use App\Video;
 use Illuminate\Support\Facades\Auth;
 
 class VideoApiController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    /**
      * Mark as watched
      *
-     * @param  \App\Video  $video
-     * @return \App\Video
+     * @param  Video $video
+     * @return Video
      */
     public function markWatched(Video $video)
     {
@@ -100,8 +24,8 @@ class VideoApiController extends Controller
     /**
      * Mark as unwatched
      *
-     * @param  \App\Video  $video
-     * @return \App\Video
+     * @param  Video $video
+     * @return Video
      */
     public function markUnwatched(Video $video)
     {
@@ -113,13 +37,13 @@ class VideoApiController extends Controller
     /**
      * Toggle watched status
      *
-     * @param  \App\Video  $video
-     * @return integer
+     * @param  Video $video
+     * @return array<string,integer>
      */
     public function toggleWatched(Video $video)
     {
         $user = Auth::user();
-        if ( $user->hasWatched( $video ) ) {
+        if ($user->hasWatched($video) ) {
             $user->watched()->detach($video);
             return [ 'newStatus' => 0 ];
         } else {
@@ -127,5 +51,4 @@ class VideoApiController extends Controller
             return [ 'newStatus' => 1 ];
         }
     }
-
 }

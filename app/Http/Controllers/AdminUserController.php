@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Models\User;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controllers\HasMiddleware;
 
-class AdminUserController extends Controller
+class AdminUserController extends Controller implements HasMiddleware
 {
-
-    public function __construct()
+    public static function middleware()
     {
-        $this->middleware( [ 'auth', 'admin' ] );
+        return [ 'auth', 'admin' ];
     }
 
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function index()
     {
+        $users = User::withCount('watched')->get();
 
-        $users = User::withCount( 'watched' )->get();
-
-        return view( 'admin.users.index', [
+        return view(
+            'admin.users.index', [
             'users' => $users
-        ] );
+             ]
+        );
 
     }
 
@@ -42,7 +44,7 @@ class AdminUserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -53,7 +55,7 @@ class AdminUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
@@ -64,7 +66,7 @@ class AdminUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
@@ -75,8 +77,8 @@ class AdminUserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\User                $user
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
@@ -87,11 +89,12 @@ class AdminUserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
     {
         //
     }
+
 }

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <main>
+    <main class="max-w-5xl mx-auto px-2 prose">
         <h1>Privacy</h1>
         <p>
             <em>This page explains what data I collect from you and why, the basis for collecting and processing it, where it goes, how safe it is, and how you can change/delete it.
@@ -20,12 +20,12 @@
         </h3>
         <p>
             <ul>
-                <li>The home page uses Google Analytics which collects anonymous data about users visiting that page. This is so that I can analyse where people are coming from so that I can better market the course and gain insight for future projects.</li>
+                <li>The home page uses Fathom Analytics which collects anonymous data about users visiting that page. This is so that I can analyse where people are coming from so that I can better market the course and gain insight for future projects.</li>
                 <li>The sign up page collects your name, email address, and a password. I collect your name in case I need to contact you in the future about the course.  An email address and password are needed to log in.</li>
                 <li>When a user registers I am sent an email with their details. This is deleted at the first opportunity and exists so that I can welcome you if necessary, and so that I can spot spam sign-ups (which I've attempted to reduce by using a CAPTCHA.</li>
                 <li>The registration screen also contains a CAPTCHA. I believe that this will send some anonymous data about your interactions to Google to try to work out if you are a real person.</li>
                 <li>When you watch to the end of a video I store that you have completed that video.  This is both so that I can show you which videos you've completed, but also so that I can view reports on how many people are watching videos to see if this has been a worthwhile exercise.</li>
-                <li>The videos are YouTube embeds in iframes, so anonymous data about your video views is also sent to the YouTube analytics platform.  If you are logged in to a Google account you may find that this information is linked to that account.</li>
+                <li>The videos are Vimeo embeds in iframes, so anonymous data about your video views is also sent to the Vimeo analytics platform.</li>
                 <li>I use Google fonts which may also be tracking you as you move around the web. This made developing the website quick and easy and may speed things up for you too.</li>
             </ul>
             <p>
@@ -36,7 +36,10 @@
             What's the basis for collecting and processing this data?
         </h3>
         <p>
-            For Google Analytics and the CAPTCHA, this data is processed by Google and there is implied consent for doing this by using this website.
+            For the CAPTCHA, this data is processed by Google and there is implied consent for doing this by using this website.
+        </p>
+        <p>
+            For Fathom Analytics the data is processed by Fathom Analytics and there is implied consent for doing this by using this website. Though they are super privacy friendly and I don't even really need to tell you that I'm using them.
         </p>
         <p>
             You consent to all of the other data processing when you sign up to watch the videos.
@@ -54,7 +57,7 @@
             Where does my data go and how safe is it?
         </h3>
         <p>
-            Aside from the Google Analytics and Re:CAPTCHA data, I'm storing your data on a Digital Ocean VPS (Virtual Private Server) in Digital Ocean's London Data center.
+            Aside from the Google Analytics and Re:CAPTCHA data, I'm storing your data on a VPS (Virtual Private Server) provided by Freethought Internet Limited in their London datacenter.
         </p>
         <p>
             I've taken as many security precautions as are reasonably practical for this application.
