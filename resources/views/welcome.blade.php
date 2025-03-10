@@ -27,7 +27,7 @@
 	<link rel='stylesheet' href='/css/welcome.css' type='text/css' media='all' />
 
 	<title>WP to Laravel - Stop fighting WordPress; start building efficient, effective apps in Laravel</title>
-			
+
 	<meta name="description" content="Stop fighting WordPress; start building efficient, effective apps in Laravel"/>
 	<link rel="canonical" href="https://wptolaravel.com/" />
 	<meta property="og:locale" content="en_GB" />
@@ -43,48 +43,51 @@
 	<meta name="twitter:image" content="https://wptolaravel.com/images/wptolaravel.jpg" />
 	<meta name="twitter:creator" content="@magicroundabout" />
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12614570-22"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-12614570-22');
-	</script>
-
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body id="welcome-screen" class="min-h-screen text-white">
 
-	<header>
-	
-		<h1>WP to Laravel</h1>
-        <h2>Stop fighting WordPress; start building efficient, effective apps in Laravel</h2>
-        
-        <div class="welcome-buttons">
+	<header class="mt-16 mb-12 max-w-4xl px-5 mx-auto">
+
+		<h1 class="text-6xl text-center font-light mb-12">WP to Laravel</h1>
+        <h2 class="text-2xl text-center font-light mb-12">Stop fighting WordPress; start building efficient, effective apps in Laravel</h2>
+
+        <div class="flex items-center justify-center gap-5">
             @auth
-                <a class="button" href="{{ action( 'VideoController@show', ['video' => Auth::user()->last_watched_id]) }}">
+                <x-button href="{{ action([\App\Http\Controllers\VideoController::class, 'show'], ['video' => Auth::user()->last_watched_id]) }}">
                     Watch the videos
-                </a>
+                </x-button>
             @endauth
 
             @guest
-                <a class="button" href="{{ route('register') }}">
+                <x-button href="{{ route('register') }}">
                     Sign up
-				</a> 
-				<a class="button" href="{{ route('login') }}">
+				</x-button>
+				<x-button href="{{ route('login') }}">
                     Log in
-                </a> 
+                </x-button>
 
             @endguest
         </div>
-	
+
 	</header>
-	
-	<article>
-		
+
+	<article class="
+        mt-12 mb-12 max-w-2xl px-5 mx-auto text-lg
+        prose
+        prose-headings:text-white
+        prose-a:text-white
+        prose-p:text-white
+        prose-li:text-white
+        prose-li:marker:text-white
+        prose-strong:text-white
+        prose-h3:mt-6
+        prose-h3:pt-6
+        prose-h3:border-t
+        prose-h3:border-t-white
+        ">
+
 		<p class="notice">NOTE: This course is based on Laravel 5.5, which is quite old now. The principles still apply, and it's still a good conversion course. But bear in mind that a lot has changed since I made it. I'm hoping to update it soon.</p>
 
 		<h3>A free set of video tutorials that explain Laravel to WordPress developers</h3>
@@ -115,7 +118,7 @@
 		</p>
 
 		<h3>
-			Who is this for?	
+			Who is this for?
 		</h3>
 		<p>
 			These videos are intended for people that understand PHP pretty well, and can use a command line/terminal. I probably assume a certain level of general software development knowledge too.
@@ -156,38 +159,37 @@
 			And Laravel has been a breath of fresh air for me.
 		</p>
 		<p>
-			And I see developers who have grown up with WordPress - where it's the only tool or framework they've ever coded for - and 
+			And I see developers who have grown up with WordPress - where it's the only tool or framework they've ever coded for - and
 			they are trying to make it do things that it really shouldn't.  It's my opinion that for many of those developers learning
 			Laravel would open up new opportunities. Which is why I want to show them the benefits, and how easy the basics of Laravel can be.
 		<p>
-
-        <div class="welcome-buttons">
-            @auth
-                <a class="button" href="{{ action( 'VideoController@show', ['video' => Auth::user()->last_watched_id]) }}">
-                    Watch the videos
-                </a>
-            @endauth
-
-            @guest
-                <a class="button" href="{{ route('register') }}">
-                    Sign up
-                </a> 
-                <a class="button" href="{{ route('login') }}">
-                    Log in
-                </a> 
-            @endguest
-        </div>
-
-
 	</article>
 
-	<footer>
-	
+    <div class="welcome-buttons flex items-center justify-center gap-3 mb-12">
+        @auth
+            <x-button href="{{ action([\App\Http\Controllers\VideoController::class, 'show'], ['video' => Auth::user()->last_watched_id]) }}">
+                Watch the videos
+            </x-button>
+        @endauth
+
+        @guest
+            <x-button href="{{ route('register') }}">
+                Sign up
+            </x-button>
+            <x-button href="{{ route('login') }}">
+                Log in
+            </x-button>
+        @endguest
+    </div>
+
+	<footer class="mb-8 text-center text-sm italic">
+
 		<p>
-			An <a href="https://oikos.digital/">Oikos Digital</a> project by <a href="https://twitter.com/magicroundabout/">Ross Wintle</a>.<br>This site uses cookies and Google Analytics - disable cookies in your browser to stop that.
+			An <a class="underline hover:no-underline" href="https://oikos.digital/">Oikos Digital</a> project by <a class="underline hover:no-underline" href="https://rw.omg.lol/">Ross Wintle</a>.
 		</p>
-	
+
 	</footer>
 
+    @include('partials.global-footer-scripts')
 </body>
 </html>

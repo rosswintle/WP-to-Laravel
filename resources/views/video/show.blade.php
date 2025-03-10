@@ -3,9 +3,9 @@
 @section('title', $video->name)
 
 @section('content')
-    <main>
+    <main class="flex">
 
-        <nav class="video-nav mobile-closed">
+        <nav class="w-1/3 mr-14">
 
             <ul>
                 <li class="mobile-toggle">
@@ -16,47 +16,37 @@
                     </a>
                 </li>
                 @foreach( $allVideos as $thisIndex => $thisVideo )
-                    <li>
-                        <a 
-                            href="{{ action( 'VideoController@show', ['video' => $thisVideo->id] ) }}"
-                            class="{{ $watchedVideos->contains( $thisVideo->id ) ? 'watched' : 'unwatched' }} {{ $thisVideo->id == $video->id ? 'current-video' : '' }}">
-                            <h3>
-                                {{ $thisVideo->name }}
-                            </h3>
-                            <p class="video-order">
-                                {{ $thisIndex + 1 }}
-                            </p>
-                            <p class="video-meta">
-                                {{ intdiv( $thisVideo->duration, 60 ) }}:{{ sprintf('%02d', $thisVideo->duration % 60) }}
-                                @if ( $watchedVideos->contains( $thisVideo->id ) )
-                                    (Watched)
-                                @endif
-                            </p>
-                            <p>
-                                {{ $thisVideo->description }}
-                            </p>
-                        </a>
-                    </li>
+                    @include(
+                        'components.video-nav-item',
+                        [
+                            'index' => $thisIndex,
+                            'video' => $thisVideo,
+                            'watched' => $watchedVideos->contains( $thisVideo->id ),
+                            'current' => $thisVideo->id == $video->id,
+                            ]
+                            )
                 @endforeach
-            </ul>    
+            </ul>
 
         </nav>
 
         <article class="video-main">
 
-            <h1>
+            <h1 class="font-bold text-2xl my-6">
                 {{ $video->name }}
             </h1>
 
-            <p>
+            <p class="mb-6">
                 {{ $video->description }}
             </p>
 
-            <div class="videoWrapper">
+            <div class="mb-8">
                 <iframe src="https://player.vimeo.com/video/{{ $video->videoVimeoId }}" width="640" height="400" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
 
-            {!! $video->notes !!}
+            <div class="prose">
+                {!! $video->notes !!}
+            </div>
 
             <script>
                 var iframe = document.querySelector('iframe');
@@ -70,7 +60,7 @@
                 }
 
                 function onPlayerEnded(event) {
-                    axios.post( '{{ action( 'VideoApiController@markWatched', ['video' => $video->id] ) }}' )
+                    axios.post( '{{ action( [\App\Http\Controllers\VideoApiController::class, 'markWatched'], ['video' => $video->id] ) }}' )
                     .then( function () {
                         const videoNavElem = document.querySelector('.video-nav .current-video');
                         const videoMetaElem = videoNavElem.querySelector('.video-meta');
@@ -88,7 +78,6 @@
             </script>
 
         </article>
-        
+
     </main>
 @endsection
-

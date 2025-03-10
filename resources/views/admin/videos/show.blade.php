@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            
+
             @component('components.messages')
             @endcomponent
 
@@ -51,7 +51,7 @@
                             <tr>
                                 <td>Actions</td>
                                 <td>
-                                    <a class="btn btn-default" href="{{ action( 'AdminVideoController@edit', [ 'video' => $video ] ) }}">
+                                    <a class="btn btn-default" href="{{ action( [\App\Http\Controllers\AdminVideoController::class, 'edit'], [ 'video' => $video ] ) }}">
                                         Edit
                                     </a>
                                 </td>
@@ -60,7 +60,7 @@
                     </table>
                 </div>
                 <div class="panel-footer">
-                    <a href="{{ action('AdminVideoController@index') }}">
+                    <a href="{{ action([\App\Http\Controllers\AdminVideoController::class, 'index']) }}">
                         Back to list
                     </a>
                 </div>
@@ -70,5 +70,3 @@
 </div>
 
 @endsection
-
-

@@ -10,28 +10,27 @@
 
     <title>@yield('title') - {{ config('app.name', 'WP to Laravel') }}</title>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/video.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script src="https://player.vimeo.com/api/player.js"></script>
 
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar">
+    <div id="app" class="max-w-5xl mx-auto px-2">
+        <nav class="bg-sky-700 text-sm text-white flex justify-between py-3 px-4 border-b border-b-white">
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="uppercase" href="{{ url('/') }}">
                 {{ config('app.name', 'WP to Laravel') }}
             </a>
 
-            <ul>
+            <ul class="flex gap-6">
                 <!-- Authentication Links -->
                 @guest
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                    <li><a class="uppercase" href="{{ route('login') }}">Login</a></li>
+                    <li><a class="uppercase" href="{{ route('register') }}">Register</a></li>
                 @else
                     <li>
-                        <a href="{{ route('logout') }}"
+                        <a class="uppercase" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                             Logout
@@ -49,13 +48,11 @@
             @yield('content')
         </main>
 
+        <footer class="bg-sky-700 text-sm text-white text-center py-3 px-4 border-b border-b-white">
+            Made by and &copy; <a class="underline" href="https://rosswintle.uk/">Ross Wintle</a>, 2018 | <a class="underline" href="{{ '/privacy' }}">Privacy</a>
+        </footer>
     </div>
 
-    <footer>
-        Made by and &copy; <a href="https://rosswintle.uk/">Ross Wintle</a>, 2018 | <a href="{{ '/privacy' }}">Privacy</a>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    @include('partials.global-footer-scripts')
 </body>
 </html>

@@ -27,7 +27,7 @@
                                     <td>{{ $video->id }}</td>
                                     <td>{{ $video->order }}</td>
                                     <td>
-                                        <a href="{{ action( 'VideoController@show', ['video' => $video->id] ) }}">
+                                        <a href="{{ action( [\App\Http\Controllers\VideoController::class, 'show'], ['video' => $video->id] ) }}">
                                             {{ $video->name }}
                                         </a>
                                     </td>
@@ -37,10 +37,10 @@
                                         {{ $video->watched_by_count }}
                                     </td>
                                     <td>
-                                        <a class="btn btn-default" href="{{ action( 'AdminVideoController@show', [ 'video' => $video ] ) }}">
+                                        <a class="btn btn-default" href="{{ action( [\App\Http\Controllers\AdminVideoController::class, 'show'], [ 'video' => $video ] ) }}">
                                             View
                                         </a>
-                                        <a class="btn btn-default" href="{{ action( 'AdminVideoController@edit', [ 'video' => $video ] ) }}">
+                                        <a class="btn btn-default" href="{{ action( [\App\Http\Controllers\AdminVideoController::class, 'edit'], [ 'video' => $video ] ) }}">
                                             Edit
                                         </a>
                                     </td>
