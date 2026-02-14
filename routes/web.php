@@ -9,11 +9,13 @@ use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VideoController;
 use App\Http\Middleware\Admin;
+use Facades\Illuminate\Support\Facades\Auth;
 
 Route::view('/', 'welcome')->name('home');
 Route::view('/privacy', 'privacy');
 
-Auth::routes();
+// Old Laravel UI routes
+// Auth::routes();
 
 Route::prefix('admin')->middleware(['auth', Admin::class])->group(
     function () {
